@@ -1,0 +1,177 @@
+
+.footer {
+  background: linear-gradient(135deg, #222, #444); /* Fondo con un degradado más sutil */
+  color: #f4f4f4; /* Gris Claro */
+  padding: 60px 0;
+  font-family: 'Arial', sans-serif;
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3); /* Sombra más marcada para un efecto de profundidad */
+  border-top: 5px solid #f7af51; /* Borde superior con un color de acento */
+}
+
+/* Animación de desvanecimiento */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.footer a {
+  color: #ddd; /* Gris más suave */
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+
+.footer a:hover {
+  color: #f7af51; /* Naranja Claro Hover */
+  text-decoration: underline;
+  transform: translateY(-5px); /* Efecto de desplazamiento */
+}
+
+.social-icons a {
+  font-size: 2.5rem;
+  color: #f4f4f4;
+  margin: 0 20px;
+  transition: color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #f7af51; /* Naranja Principal */
+  transform: scale(1.2);
+  box-shadow: 0 0 12px rgba(247, 175, 81, 0.8); /* Sombra de íconos con mayor énfasis */
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 30px;
+  }
+}
+
+/* Mejoras de estilo para la tipografía en pantallas pequeñas */
+@media (max-width: 576px) {
+  .footer h5 {
+    font-size: 1.2rem;
+  }
+  .footer .contact-info li {
+    font-size: 0.9rem;
+  }
+}
+
+/* Estilo para la sección de contacto */
+.contact-info i {
+  color: #f7af51; /* Naranja Principal */
+}
+
+.footer .container {
+  height: auto;
+  max-width: 1900px;
+  border-radius: 12px;
+  background-color: #333;
+  padding: 30px;
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Mapa con border-radius y sombra */
+.map-container iframe {
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  width: 100%;
+  height: 400px; /* Aumento el tamaño del mapa */
+}
+
+.map-container iframe:hover {
+  transform: scale(1.05);
+}
+
+.footer .row {
+  margin-bottom: 25px;
+}
+
+/* Logo de la tienda */
+.footer .logo {
+  display: block;
+  max-width: 250px;
+  margin: 0 auto 25px;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más marcada */
+  border-radius: 12px;
+}
+
+/* Línea debajo del logo */
+.footer .logo-line {
+  border-bottom: 3px solid #f7af51;
+  width: 50%;
+  margin: 15px auto;
+}
+
+/* Agregar padding y espaciado a la sección de copyright */
+.footer .copyright {
+  font-size: 0.95rem;
+  margin-top: 30px;
+  color: #bbb; /* Gris Suave */
+}
+
+/* Nueva sección de contáctanos */
+.footer .contact-us {
+  flex: 1 1 20%; /* Cada sección ocupará alrededor del 30% del contenedor */
+  background-color: #444;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+  margin-top: 30px;
+  margin-right: 10px; /* Espaciado entre columnas */
+}
+
+.footer .contact-us h5 {
+  color: #f7af51;
+  font-size: 1.5rem;
+}
+
+.footer .contact-us p {
+  color: #ddd;
+  font-size: 1rem;
+}
+
+  /* Animación global de desvanecimiento */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* Animación al pasar sobre íconos sociales */
+  @keyframes socialHover {
+    0% {
+      transform: scale(1) rotate(0);
+    }
+    100% {
+      transform: scale(1.2) rotate(10deg);
+    }
+  }
+
+  /* Animaciones de entrada */
+  .footer .social-icons a {
+    animation: fadeIn 0.8s ease-in-out;
+    display: inline-block;
+    margin: 0 15px;
+  }
+
+  .social-icons a:hover {
+    animation: socialHover 0.4s ease-in-out forwards;
+  }
+
+  /* Animación para el logo */
+  .footer .logo {
+    animation: fadeIn 1.2s ease-in-out;
+  }
+
+  /* Hover con sombra animada en las tarjetas */
+  .footer .contact-us:hover {
+    box-shadow: 0px 8px 20px rgba(255, 167, 81, 0.8);
+    transform: translateY(-5px);
+    transition: all 0.3s ease-in-out;
+  }

@@ -1,0 +1,12 @@
+.contenedor-agregar-producto {
+    max-width: 700px; /* Ajustar el ancho máximo */
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex; /* Usar Flexbox */
+    flex-direction: column; /* Disposición en columna */
+    align-items: center; /* Alinear elementos horizontalmente en el centro */
+    justify-content: center; /* Alinear elementos verticalmente en el centro */
+}

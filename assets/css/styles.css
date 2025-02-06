@@ -1,0 +1,874 @@
+/*-------------------*/
+/*--ESTILOS GLOBALES*/
+/*-------------------*/
+
+/* Aseguramos que html y body ocupen toda la altura de la ventana */
+
+/*-------------------*/
+/*--Edf*/
+/*-------------------*/
+
+body {
+    font-family: 'Lato', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: #33333A;
+}
+
+.texto-centrado {
+    text-align: center;
+}
+
+.imagen-centrada {
+    margin: 0 auto;
+}
+
+.imagen-mediana {
+    width: 40%;
+    max-width: 500px;
+    min-width: 250px;
+}
+
+a {
+    text-decoration: none;
+     color: white!important;
+}
+
+
+
+a:visited {
+    color: white!important;
+}
+
+.boton a {
+    color: white;
+}
+
+.negrita {
+    font-weight: bold;
+}
+
+.oculto {
+    display: none;
+}
+
+:root {
+    --negro-primario:  #33333A;
+    --patron-espaciado: 0 10%;
+}
+
+/*----Alineación de Secciones----*/
+.encabezado-principal,
+.vista-productos,
+.vista-productos-random,
+.contenedor-footer,
+.contenedor-categorias {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--patron-espaciado);
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/*-------------------*/
+/*--ENCABEZADO-------*/
+/*-------------------*/
+
+
+/*-------------------*/
+/*--ÁREA PRINCIPAL---*/
+/*-------------------*/
+
+.imagen-hero {
+    height: 550px;
+    width: 100%;
+    background-image: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.6) 100%), url('../img/banner.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.imagen-hero h2 {
+    color: white;
+    font-size: 3.3rem;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.verde {
+    color: #2ecc71;
+}
+
+/*-------------------*/
+/*--VISTA PRODUCTOS--*/
+/*-------------------*/
+header {
+    background-color: #f7af51; /* Cambia #yourColorCode por el color que desees */
+    color: white; /* Cambia #yourTextColorCode por el color del texto que desees */
+}
+
+.boton.agregar-producto, .boton.agregar-categoria { background-color: #f7af51; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; text-align: center; font-size: 16px; font-weight: bold; text-transform: uppercase; transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; text-decoration: none; display: inline-block; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); }
+.boton.agregar-producto:hover, .boton.agregar-categoria:hover { background-color: #d9903d; transform: scale(1.05); box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.boton.agregar-producto:active, .boton.agregar-categoria:active { transform: scale(0.95); box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); }
+
+/*-------------------*/
+/*--PÁGINA PRODUCTO--*/
+/*-------------------*/
+/* Contenedor Principal de Producto */
+
+.contenedor-producto-unico {
+    display: flex;
+    justify-content: center; /* Centra los elementos horizontalmente */
+    align-items: center; /* Centra los elementos verticalmente */
+    flex-wrap: wrap; /* Permite que los elementos se acomoden bien en pantallas más pequeñas */
+    gap: 20px; /* Espaciado entre la imagen y los detalles */
+    margin: 0 auto; /* Asegura que el contenedor principal esté centrado en la página */
+    max-width: 1200px; /* Limita el ancho máximo para que el diseño no se expanda demasiado */
+    padding: 50px; /* Añade un padding de 20px a todo el contenedor */
+}
+
+
+/* Estilo para la imagen destacada */
+.imagen-destacada-producto {
+    background-image: url('<?=base_url?>uploads/images/<?=$productoUnico->imagen;?>');
+    width: 100%;
+    height: 400px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    max-width: 400px; /* Tamaño máximo de la imagen */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos Generales */
+.detalles-unico {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 0 auto; /* Asegura que el bloque de detalles esté centrado */
+}
+-------------------
+/* Estilo del área de entrada */
+.input-area {
+    font-family: 'Nunito', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-top: 1px solid #f7af51; /* Borde superior con color de acento */
+    background-color: #33333A; /* Fondo oscuro */
+    border-radius: 0 0 15px 15px; /* Bordes redondeados en la parte inferior */
+}
+
+/* Estilo del campo de texto */
+input[type="text"],
+input[type="number"],
+input[type="date"],
+input[type="email"],
+textarea,
+select,
+input[type="file"] {
+    width: 80%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 20px;
+    border: 1px solid #f7af51; /* Borde con color de acento */
+    background-color: #444; /* Fondo oscuro */
+    color: #f4f4f4; /* Texto claro */
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, background-color 0.3s ease; /* Transiciones suaves */
+}
+
+/* Efecto hover y focus para el campo de texto */
+input[type="text"]:hover,
+input[type="text"]:focus,
+input[type="number"]:hover,
+input[type="number"]:focus,
+input[type="date"]:hover,
+input[type="date"]:focus,
+input[type="email"]:hover,
+input[type="email"]:focus,
+textarea:hover,
+textarea:focus,
+select:hover,
+select:focus,
+input[type="file"]:hover,
+input[type="file"]:focus {
+    border-color: #e6953b; /* Borde más oscuro al pasar el mouse o enfocar */
+    background-color: #555; /* Fondo más claro al pasar el mouse o enfocar */
+    outline: none; /* Eliminar el borde de enfoque predeterminado */
+}
+
+/* Estilo del campo de checkbox */
+input[type="checkbox"] {
+    width: auto;
+    margin-left: 10px;
+}
+
+/* Hacer los textarea más grandes */
+textarea {
+    height: 150px; /* Altura mayor para los textarea */
+}
+----------------------
+/* Estilo de los elementos de formulario */
+fieldset {
+    width: 75px;
+    margin-bottom: 10px;
+}
+
+fieldset input {
+    width: 100%;
+}
+
+/* Estilos Generales */
+.detalles-unico {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espacio entre los bloques */
+}
+
+.descripcion p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.precio-unico p {
+    font-size: 35px;
+    font-weight: bold;
+    color: #4CAF50;
+    margin-bottom: 20px;
+}
+
+/* Estilo para el bloque de características */
+.caracteristicas h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.caracteristicas ul {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 20px; /* Espacio después de la lista */
+}
+
+.caracteristicas li {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.caracteristicas li strong {
+    color: #333;
+}
+
+/* Estilos del botón de añadir al carrito */
+.boton-agregar-carrito {
+    background-color: #3faabd;
+    color: white;
+    font-size: 16px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    margin-top: 20px;
+    display: block;
+}
+
+.boton-agregar-carrito:hover {
+    background-color: #49c4da;
+}
+
+.boton-agregar-carrito a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    width: 100%;
+}
+
+
+/*-----------------------*/
+/*------MODAL LOGIN------*/
+/*-----------------------*/
+
+.contenedor-login, .contenedor-registro {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,0,0,0.36) 0%, rgba(0,0,0,0.3575805322128851) 100%);
+    z-index: 20;
+}
+
+.caja-login{
+    height: 450px;
+    width: 400px;
+    background-color: rgba(255, 255, 255, 0.13);
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+    padding: 50px 35px;
+}
+
+.caja-registro {
+    height: 650px;
+    width: 400px;
+    background-color: rgba(255, 255, 255, 0.13);
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+    padding: 50px 35px;
+}
+
+.titulo-login h3, .titulo-registro h3 {
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 42px;
+    text-align: center;
+    color: white;
+    font-family: 'Poppins', sans-serif;   
+}
+
+.boton-login ,.boton-registro{
+    margin-top: 10px;
+    width: 100%;
+    background-color: #1d1d1d;
+    color: #f5eeee;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+
+.yaRegistrado p {
+    color: #ffffff; 
+}
+
+
+.grupo-formulario {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.grupo-formulario-login label {
+    display: block;
+    margin: 10px 0;;
+    font-size: 16px;
+    font-weight: 500;
+    color: rgb(255, 255, 255);
+    font-family: 'Poppins', sans-serif;
+}
+
+.grupo-formulario label {
+    display: block;
+    margin: 10px 0;;
+    font-size: 16px;
+    font-weight: 500;
+    color: rgb(5, 5, 5);
+    font-family: 'Poppins', sans-serif;
+}
+
+.cerrar {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+.registrarse-aqui {
+    cursor: pointer;
+    justify-content: space-around;
+    width: 100%;
+}
+#clave, #correo-login, #nombre-registro, #apellido-registro,
+#correo-registro,#clave-registro,#confirmar-clave-registro {
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #ccc; /* Borde gris claro */
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #ffffff; /* Color de fondo */
+    color: #333; /* Color del texto */  
+    font-family: 'Poppins', sans-serif;
+}
+
+.registrarse-aqui {
+    cursor: pointer;
+    color: white; /* Color del enlace de registro */
+}
+
+/*-----------------------*/
+/*--ADMINISTRAR CATEGORÍAS Y PRODUCTOS--*/
+/*-----------------------*/
+
+.contenedor-categorias,
+.contenedor-crear-categoria,
+.contenedor-agregar-producto,
+.contenedor-exito {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: var(--patron-espaciado);
+}
+
+.contenedor-categorias h2, .contenedor-agregar-producto h2 {
+    margin: 20px auto;
+    width: 80%;
+    text-align: center;
+}
+
+.agregar-categoria, .agregar-producto, .alinear-tabla {
+    width: 80%;
+    margin: 7px auto;
+}
+
+.agregar-categoria button, .agregar-producto button {
+    width: 18%;
+}
+
+.agregar-categoria button a, .agregar-producto button a {
+    color: white;
+    text-decoration: none !important;
+}
+
+
+
+
+/* Contenedor de tabla responsivo */
+.contenedor-categorias {
+    overflow-x: auto; /* Habilita el desplazamiento horizontal si es necesario */
+    margin: 0 auto;
+    padding: 1rem;
+    max-width: 100%; /* Asegura que no se desborde del contenedor */
+}
+
+/* Estilo general de la tabla */
+table {
+    border-collapse: separate;
+    width: 100%; /* Se ajusta al contenedor */
+    max-width: 1200px; /* Limita el tamaño máximo para que no se vea demasiado grande */
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(145deg, #222, #333); /* Fondo degradado moderno */
+    overflow: hidden;
+    animation: fadeIn 1s ease-in-out; /* Animación de entrada */
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Estilo de las celdas de encabezado */
+th {
+    font-size: 1.2rem;
+    padding: 15px;
+    background: linear-gradient(145deg, #f79f61, #f7af51);
+    color: white;
+    border-bottom: 3px solid #f7af51;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+/* Estilo de las celdas de datos */
+td {
+    padding: 10px 15px;
+    border-top: 1px solid #444;
+    color: #ddd;
+    font-size: 1rem;
+    transition: all 0.4s ease;
+}
+
+/* Efecto hover en las filas */
+tr:hover {
+    background: linear-gradient(145deg, #f79f61, #f7af51);
+    color: white;
+    transform: scale(1.01);
+    box-shadow: 0 5px 15px rgba(247, 159, 97, 0.5);
+}
+
+/* Efecto hover en las celdas */
+td:hover {
+    background: linear-gradient(145deg, #444, #555);
+    color: #f7af51;
+    cursor: pointer;
+}
+
+/* Estilo para las filas alternas */
+tr:nth-child(even) {
+    background: linear-gradient(145deg, #333, #444);
+}
+
+tr:nth-child(odd) {
+    background: linear-gradient(145deg, #222, #333);
+}
+
+/* Iconos con animaciones */
+.icono-borrar,
+.icono-editar {
+    font-size: 1.2rem;
+    color: #ffffff;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.icono-borrar:hover {
+    transform: rotate(20deg) scale(1.2);
+    color: #ff6f61;
+}
+
+.icono-editar:hover {
+    transform: rotate(-20deg) scale(1.2);
+    color: #61d4ff;
+}
+
+
+
+
+
+
+
+
+
+/* Formulario de Agregar Producto */
+.formulario-agregar-producto {
+    width: 100%;
+}
+
+.texto-producto {
+    height: 100px;
+}
+
+.contenedor-exito {
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.contenedor-exito h1 {
+    margin-bottom: 0px;
+}
+
+/*-----------------------*/
+/*------PIE DE PÁGINA---*/
+/*-----------------------*/
+/* Pie de página */
+footer {
+    background-color: #222; /* Fondo oscuro */
+    color: #fff; /* Texto blanco */
+    padding-top: 30px; /* Espaciado superior */
+    padding-bottom: 30px; /* Espaciado inferior */
+}
+
+/* Contenedor principal */
+footer .container {
+    max-width: 1700px; /* Ancho máximo del contenedor */
+    margin: 0 auto; /* Centrar el contenedor */
+}
+
+/* Distribuir las 4 columnas en una sola fila (1x4) */
+footer .row {
+    display: flex; /* Usar flexbox para el diseño */
+    justify-content: space-between; /* Espacio entre columnas */
+    flex-wrap: wrap; /* Permitir que las columnas se envuelvan */
+}
+
+footer .row > div {
+    padding: 15px; /* Espaciado interno */
+    flex: 1 1 22%; /* 4 columnas en total, con un margen entre ellas */
+    min-width: 220px; /* Asegura que las columnas no sean demasiado estrechas */
+    box-sizing: border-box; /* Incluir padding y border en el tamaño total */
+}
+
+/* Estilo para los iconos */
+footer .row i {
+    color: var(--main-bg-color-primario); /* Color del icono */
+    font-size: 30px; /* Tamaño del icono */
+}
+
+/* Texto de los elementos de contacto */
+footer .row .col-10 {
+    font-size: 14px; /* Tamaño de fuente */
+    line-height: 1.5; /* Altura de línea */
+}
+
+footer .row .col-10 b {
+    font-size: 16px; /* Tamaño de fuente en negrita */
+    display: block; /* Mostrar como bloque */
+    margin-bottom: 5px; /* Espaciado inferior */
+}
+
+/* Estilo de los enlaces */
+footer .row a {
+    text-decoration: none; /* Sin subrayado */
+    color: #fff; /* Color del texto */
+}
+
+footer .row a:hover {
+    color: var(--main-bg-color-primario); /* Color del texto al pasar el ratón */
+}
+
+/* Columna de Redes Sociales */
+footer .follow_us ul {
+    list-style-type: none; /* Sin viñetas */
+    padding: 0; /* Sin padding */
+}
+
+footer .follow_us ul li {
+    display: inline-block; /* Mostrar en línea */
+    margin-right: 15px; /* Espaciado derecho */
+}
+
+footer .follow_us ul li a {
+    color: #fff; /* Color del texto */
+    font-size: 24px; /* Tamaño de fuente */
+}
+
+footer .follow_us ul li a:hover {
+    color: var(--main-bg-color-primario); /* Color del texto al pasar el ratón */
+}
+
+/* Estilo de los enlaces dentro de las secciones de redes, sobre nosotros, servicios, etc. */
+footer h3 {
+    color: #fff; /* Color del texto */
+    font-size: 18px; /* Tamaño de fuente */
+    font-weight: bold; /* Negrita */
+    margin-bottom: 15px; /* Espaciado inferior */
+    text-transform: uppercase; /* Texto en mayúsculas */
+}
+
+footer .links ul {
+    list-style-type: none; /* Sin viñetas */
+    padding: 0; /* Sin padding */
+}
+
+footer .links ul li {
+    margin-bottom: 10px; /* Espaciado inferior */
+}
+
+footer .links ul li a {
+    text-decoration: none; /* Sin subrayado */
+    color: #ddd; /* Color del texto */
+}
+
+footer .links ul li a:hover {
+    color: var(--main-bg-color-primario); /* Color del texto al pasar el ratón */
+}
+
+/* Sección de pago (tarjetas) */
+footer .footer-selector ul {
+    padding: 0; /* Sin padding */
+    margin: 0; /* Sin margen */
+}
+
+footer .footer-selector ul li {
+    display: inline-block; /* Mostrar en línea */
+    margin-right: 15px; /* Espaciado derecho */
+}
+
+footer .footer-selector ul li img {
+    max-height: 35px; /* Altura máxima de la imagen */
+}
+
+/* Información adicional y derechos */
+footer .additional_links {
+    font-size: 14px; /* Tamaño de fuente */
+    text-align: right; /* Alinear a la derecha */
+}
+
+footer .additional_links a {
+    color: #ddd; /* Color del texto */
+    text-decoration: none; /* Sin subrayado */
+}
+
+footer .additional_links a:hover {
+    color: var(--main-bg-color-primario); /* Color del texto al pasar el ratón */
+}
+
+footer .additional_links span {
+    color: #ddd; /* Color del texto */
+}
+
+
+
+/*jeje*/
+
+        body {
+            background-color: #f4f4f4;
+            color: #343a40;
+        }
+
+        .vista-productos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .vista-productos-random {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); /* Reducir el tamaño mínimo de los elementos */
+            gap: 20px;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+
+        .producto {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            background-color: #fff;
+            padding: 15px;
+        }
+
+        .producto:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .imagen-producto {
+            width: 100%;
+            height: auto;
+            padding-top: 75%; /* Mantener la relación de aspecto */
+            background-size: contain; /* Ajustar la imagen completamente sin cortar */
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .titulo-producto h4 {
+            font-size: 1.5rem;
+            color: #f7af51;
+            text-align: LEFT;
+            margin: 10px 0;
+        }
+
+        .titulo-precio p {
+            font-size: 1.2rem;
+            text-align: LEFT;
+            color: #6c757d;
+        }
+
+        .descripcion-producto p {
+            text-align: LEFT;
+            padding: 0 10px;
+            color: #343a40;
+        }
+
+        .boton {
+            background-color: #f7af51;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            display: block;
+
+            text-align: center;
+            transition: background-color 0.3s ease-in-out;
+            text-decoration: none;
+        }
+
+        .boton:hover {
+            background-color: #d9903d;
+        }
+
+        h1 {
+            color: #f7af51;
+            text-align: center;
+            margin: 40px 0;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .boton::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 3px;
+            background: #d9903d;
+            transition: width 0.3s;
+            margin: 0 auto;
+            margin-top: 5px;
+        }
+
+        .boton:hover::after {
+            width: 100%;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .producto {
+            animation: slideIn 0.5s ease-in-out;
+        }
+   

@@ -1,0 +1,263 @@
+/* Estilo general para el carrusel */
+.carousel-inner video {
+    position: relative;
+    object-fit: cover;
+    height: 100%;
+    max-width: 100%;
+}
+
+/* Fondo de transición para las diapositivas no activas (pantalla negra) */
+.carousel-item:not(.active) {
+    background-color: black; /* Fondo negro mientras no está activo */
+    visibility: hidden; /* Oculta las diapositivas no activas */
+    opacity: 0; /* Hace invisible la diapositiva no activa */
+    transition: opacity 1s ease-in-out; /* Transición suave para la opacidad */
+}
+
+/* Transición de las diapositivas */
+.carousel-inner .carousel-item {
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Estado activo de la diapositiva */
+.carousel-item.active {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s ease-in-out, visibility 0s linear 0.5s; /* Espera a que termine la opacidad */
+}
+
+/* Estilo para los videos */
+.carousel-item video {
+    transition: filter 1s ease-in-out;
+    object-fit: contain; /* Para que el video se ajuste dentro del contenedor sin deformarse */
+    max-width: 100%;
+    max-height: 1100px; /* Ajusta la altura máxima del video */
+    width: 100%; /* Asegura que ocupe todo el ancho disponible */
+    margin: 0 auto; /* Centra el video */
+    filter: brightness(50%); /* Video más oscuro cuando no está activo */
+}
+
+/* Estilo del video en la diapositiva activa */
+.carousel-item.active video {
+    filter: brightness(100%); /* Video brillante cuando está activo */
+}
+
+/* Estilo de la leyenda del carrusel */
+.carousel-caption {
+    position: absolute;
+    bottom: 20%;
+    left: 10%;
+    z-index: 2;
+    color: #fff;
+    text-align: left;
+}
+
+.carousel-caption h3 {
+    font-size: 2rem;
+    animation: fadeInUp 1s ease forwards;
+}
+
+.carousel-caption p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.carousel-caption .btn {
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 50px;
+    background-color: #33333A; /* Fondo negro */
+    color: white;
+    text-decoration: none;
+    border: none; /* Eliminar borde de Bootstrap */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+}
+
+.carousel-caption .btn:hover {
+    background-color: #f7af51; /* Color de fondo naranja cuando pasa el cursor */
+    box-shadow: 0 0 10px rgba(247, 175, 81, 0.8); /* Sombra difusa naranja */
+}
+
+.carousel-caption .btn:focus {
+    outline: none; /* Quitar el borde de enfoque cuando se hace clic */
+}
+
+
+/* Estilo de los indicadores del carrusel */
+.carousel-indicators li img {
+    width: 60px;
+    height: auto;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.carousel-indicators li img:hover {
+    transform: scale(1.1);
+}
+
+/* Sección de Marcas */
+.brands-section {
+    margin-bottom: 30px;
+    text-align: center;
+    background: linear-gradient(to bottom, rgba(100, 100, 100, 0.6), rgba(200, 200, 200, 0.8)); /* Degradado suave */
+    padding: 20px 0; /* Espaciado alrededor de las marcas */
+}
+
+.brand-logo {
+    background: rgba(0, 0, 0, 0.2); /* Fondo claro para las imágenes */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 10px;
+    transition: background 0.3s ease;
+}
+
+.brand-logo:hover {
+    background: rgba(0, 0, 0, 0.4); /* Fondo más oscuro al hacer hover */
+}
+
+/* Estilo para las imágenes de las marcas */
+.brand-logo img {
+    max-width: 100%;
+    height: 120px;
+    object-fit: contain;
+    transition: transform 0.5s ease, opacity 0.3s ease;
+}
+
+/* Efecto Hover en las imágenes de las marcas */
+.brand-logo img:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+/* Reducción de tamaño en dispositivos pequeños */
+@media (max-width: 768px) {
+    .brand-logo img {
+        height: 100px;
+    }
+}
+
+/* Estilos del cuerpo y productos */
+.body {
+    background-color: #f4f4f4;
+    color: #343a40;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.productos {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+}
+
+.titulo-productos h2 {
+    color: #f7af51;
+    text-align: center;
+    margin-bottom: 40px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+
+
+.producto {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+    background-color: #fff;
+    padding: 15px;
+}
+
+.producto:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.imagen-producto {
+    width: 100%;
+    height: 200px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 10px 10px 0 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.producto:hover .imagen-producto {
+    opacity: 0.8;
+}
+
+.titulo-producto h4, .titulo-producto p {
+    font-size: 1.5rem;
+    color: #f7af51;
+    text-align: center;
+    margin: 10px 0;
+    transition: color 0.4s ease-in-out;
+}
+
+.producto:hover .titulo-producto h4, .producto:hover .titulo-producto p {
+    color: #d9903d;
+}
+
+.descripcion-producto p {
+    text-align: center;
+    padding: 0 10px;
+    color: #343a40;
+}
+
+.boton {
+    background-color: #f7af51;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    text-align: center;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.boton a {
+    color: white;
+    text-decoration: none;
+}
+
+.boton:hover {
+    background-color: #d9903d;
+    transform: scale(1.05);
+}
+
+h1, h2 {
+    color: #f7af51;
+    text-align: center;
+    margin: 40px 0;
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.producto {
+    animation: slideIn 0.7s ease-in-out;
+}

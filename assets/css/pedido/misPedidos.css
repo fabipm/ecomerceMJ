@@ -1,0 +1,10 @@
+/* Contenedor principal del perfil */
+.container-mis-pedidos {
+    max-width: 1700px;
+    height: auto; /* Permite que crezca según el contenido */
+    max-height: none; /* Opcional: si no quieres un límite en la altura */    margin: 30px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

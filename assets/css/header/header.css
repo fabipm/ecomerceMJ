@@ -1,0 +1,331 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&display=swap'); /* Solo si no agregaste el link en HTML */
+
+/* Estilo general para el encabezado */
+.encabezado {
+    background: linear-gradient(135deg, #333, #444); /* Degradado de fondo */
+    color: #fff;
+    padding: 20px 30px; /* Más espacio en los costados y arriba */
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3); /* Sombra más suave */
+    border-bottom: 2px solid #555; /* Borde inferior sutil */
+    position: relative;
+    z-index: 1000;
+    animation: slideDown 0.5s ease-out; /* Animación de deslizamiento hacia abajo */
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Contenedor del encabezado principal */
+.encabezado-principal {
+    max-width: 100%; /* Asegura que ocupe todo el ancho disponible */
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px; /* Mayor espacio entre los elementos */
+    flex-wrap: nowrap; /* Evita que se rompan en líneas diferentes */
+}
+
+/* Contenedor del logo */
+.logo-container {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start; /* Alinea el logo a la izquierda */
+    animation: fadeIn 1s ease-in; /* Animación de desvanecimiento */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Logo ajustado correctamente */
+.logo-container img {
+    max-width: 200px; /* Ajuste más pequeño para que encaje bien */
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease; /* Transición suave para el logo */
+}
+
+.logo-container img:hover {
+    transform: scale(1.1); /* Efecto de aumento al pasar el mouse */
+}
+
+/* Contenedor de las categorías */
+.categorias-container {
+    flex: 2;
+    display: flex; /* Alineación horizontal */
+    justify-content: flex-start;  /* Alinea los items hacia la izquierda */
+    align-items: center;
+    gap: 40px;  /* Espacio entre categorías */
+    flex-wrap: nowrap; /* Asegura que las categorías estén en una sola línea */
+    animation: fadeIn 1s ease-in; /* Animación de desvanecimiento */
+}
+
+/* Estilo para los elementos del menú */
+.items-menu {
+    display: flex;
+    gap: 20px; /* Espacio entre los elementos del menú */
+}
+
+.items-menu p {
+    margin: 0; /* Elimina márgenes innecesarios */
+}
+
+.items-menu p a {
+    color: #f4f4f4;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    background: transparent;
+    font-weight: 600;
+    transition: color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Añadir transición para la sombra */
+    display: inline-block;  /* Asegura que el padding no rompa el flujo */
+    white-space: nowrap;  /* Evita que el texto se divida en varias líneas */
+    position: relative;
+    overflow: hidden;
+}
+
+.items-menu p a::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(247, 175, 81, 0.5); /* Color naranja con transparencia */
+    border-radius: 50%;
+    transition: width 0.3s ease, height 0.3s ease, top 0.3s ease, left 0.3s ease;
+    z-index: -1;
+}
+
+.items-menu p a:hover::before {
+    width: 200%;
+    height: 500%;
+    top: -50%;
+    left: -50%;
+}
+
+.items-menu p a:hover {
+    color: #f4f4f4; /* Mantiene el color del texto */
+    transform: translateY(-5px); /* Efecto de desplazamiento */
+    box-shadow: 0 0 12px rgba(247, 175, 81, 0.8); /* Sombra de íconos con mayor énfasis */
+}
+
+/* Menú de usuario */
+.menu-usuario {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 30px;
+    animation: fadeIn 1s ease-in; /* Animación de desvanecimiento */
+}
+
+/* Íconos de usuario */
+.menu-usuario .perfil-usuario {
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Transición suave para el perfil */
+}
+
+.menu-usuario .perfil-usuario:hover {
+    transform: scale(1.1); /* Efecto de aumento al pasar el mouse */
+}
+
+/* Menú desplegable del perfil */
+.menu-hover-perfil {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    color: #fff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    top: 50px;
+    right: 0;
+    padding: 10px;
+    border-radius: 5px;
+    width: 200px;
+    z-index: 1000;
+    animation: fadeIn 0.5s ease-in; /* Animación de desvanecimiento */
+}
+
+/* Lista del menú desplegable */
+.menu-hover-perfil ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu-hover-perfil ul li {
+    margin: 10px 0;
+}
+
+.menu-hover-perfil ul li a {
+    color: #f4f4f4;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.menu-hover-perfil ul li a:hover {
+    color: #f7af51;
+}
+
+/* Mostrar el menú desplegable */
+.menu-hover-perfil.mostrar {
+    display: block;
+}
+
+/* Carrito y búsqueda */
+.carrito a,
+.buscar i {
+    color: #f4f4f4;
+    font-size: 1.8rem;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.carrito a:hover,
+.buscar i:hover {
+    color: #f7af51;
+    transform: scale(1.1); /* Efecto de aumento al pasar el mouse */
+}
+
+/* Estilo para el icono de búsqueda */
+.buscar i {
+    cursor: pointer;
+}
+
+
+.buscar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Ajusta según el diseño */
+}
+
+#search-icon {
+    cursor: pointer;
+    font-size: 20px;
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+}
+
+#search-icon:hover {
+    transform: scale(1.1);
+}
+
+#search-form {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 4px;
+    padding: 8px;
+    width: 300px; /* Aumentar el ancho */
+    z-index: 1000;
+    top: 50px;
+}
+
+#search-input {
+    border: none;
+    outline: none;
+    padding: 8px 10px;
+    font-size: 16px; /* Tamaño de texto más grande */
+    width: 95%; /* Más ancho para aprovechar el formulario */
+    box-sizing: border-box; /* Considera el padding dentro del ancho */
+}
+
+#search-input:focus {
+    border: 1px solid #e98d38;
+    outline: none;
+}
+
+
+/* Responsividad para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .encabezado-principal {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .categorias-container {
+        flex: none;
+        width: 100%;
+        display: block;
+        margin-top: 10px;
+    }
+
+    .items-menu {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .items-menu p {
+        text-align: center;
+        margin: 5px 0;
+    }
+
+    .menu-usuario {
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+
+/* Animaciones adicionales */
+@keyframes bounceIn {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Aplicar animaciones adicionales */
+.logo-container img {
+    animation: bounceIn 1s ease-in-out;
+}
+
+.items-menu p a:hover {
+    animation: pulse 0.6s infinite;
+}
+
+.menu-usuario .perfil-usuario:hover {
+    animation: pulse 0.6s infinite;
+}
+
+/* Login */
+
+
+.login p {
+    margin: 0;
+    font-weight: bold;
+}
